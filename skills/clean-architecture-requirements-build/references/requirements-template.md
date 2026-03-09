@@ -33,12 +33,16 @@ Common Korean shorthand often maps to missing requirement detail:
 - Is data migration, backfill, or compatibility work required?
 - What monitoring, audit, or support visibility is needed after release?
 - Are latency, throughput, or rate-limit constraints relevant?
+- Is there any feature flag, phased rollout, tenant scoping, or fallback requirement?
+- Who needs to detect and respond if the workflow misbehaves in production?
 
 ## Failure modes
 
 - Which failures are expected and recoverable?
 - Which failures should be surfaced to the caller?
 - What should happen on partial failure?
+- What should happen during degraded mode, timeout, or downstream unavailability?
+- What is the rollback or containment move if production behavior is wrong?
 
 ## Acceptance criteria
 

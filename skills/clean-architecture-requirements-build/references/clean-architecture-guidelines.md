@@ -40,6 +40,7 @@ Use these guidelines to keep feature design and implementation aligned with clea
 - Model expected failures in use-case contracts.
 - Keep retry, timeout, transport, and persistence concerns in adapters or application services.
 - Do not hide missing product decisions inside generic error handling.
+- Make degraded-mode, fallback, and compatibility behavior explicit at boundaries when production conditions require them.
 
 ## Delivery discipline
 
@@ -47,3 +48,4 @@ Use these guidelines to keep feature design and implementation aligned with clea
 - Keep acceptance criteria close to the use case.
 - Re-check whether each new abstraction serves business clarity or only architectural aesthetics.
 - Distinguish architecture needed for the requested slice from architecture that only looks complete on diagrams.
+- Keep rollout controls, migration sequencing, and observability plans outside core policy unless they are genuine domain rules.
