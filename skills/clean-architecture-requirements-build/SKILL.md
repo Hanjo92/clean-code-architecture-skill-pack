@@ -16,6 +16,7 @@ Use `clean-code-architecture-foundation` when you need shared principles for cho
 Read `references/clean-architecture-guidelines.md` when you need first-principles guidance on the dependency rule, use-case boundaries, ports, adapters, and framework isolation.
 Read `references/architecture-anti-patterns.md` when a proposed design looks clean on paper but may be over-layered, framework-led, or hard to deliver.
 Read `references/delivery-checklist.md` when you need a compact quality gate before finalizing the design or code.
+Read `references/operational-readiness-playbook.md` when the slice involves rollout, migration, compatibility, authorization, observability, or production failure handling.
 Read `../clean-code-architecture-foundation/references/response-contract.md` when you need the shared output format.
 
 ## Request Fit
@@ -59,6 +60,7 @@ Switch to `clean-code-diagnose-refactor` when:
 - State assumptions clearly when requirements are incomplete.
 - Produce a compact requirement summary before coding so the user can see what will actually be built.
 - Surface operational constraints early: authentication, authorization, migration impact, rollout, observability, performance, and failure recovery.
+- If release constraints dominate the risk, treat them as first-class requirements rather than implementation notes.
 
 Read `references/requirements-template.md` when the request is underspecified.
 
@@ -78,6 +80,7 @@ Read `references/architecture-mapping.md` when mapping requirements to layers.
 - Define input and output contracts before wiring transport or persistence.
 - Implement only the slice required for the requested behavior, not a speculative platform.
 - Favor one vertical slice that can be verified end to end over broad scaffolding with little executable value.
+- Use `references/operational-readiness-playbook.md` when choosing the slice depends on rollout safety, migration sequencing, compatibility windows, or observability coverage.
 
 ### 4. Write code with clean boundaries
 
@@ -86,12 +89,14 @@ Read `references/architecture-mapping.md` when mapping requirements to layers.
 - Translate between external schemas and internal models at boundaries.
 - Prefer simple composition over inheritance-heavy design.
 - If requirements remain ambiguous, encode the decision as an explicit assumption or TODO at the edge, not as fuzzy domain logic.
+- Keep release controls such as feature flags, migration toggles, and compatibility adapters at the edge rather than leaking them into core policy.
 
 ### 5. Verify against the requirement
 
 - Test the use case behavior first.
 - Add boundary-level tests where integration risk is real.
 - Check that acceptance criteria, error paths, and invariants are covered.
+- Verify operational readiness where relevant: auth behavior, compatibility assumptions, migration/backfill safety, observability hooks, and rollback posture.
 - Use `references/delivery-checklist.md` before concluding that the architecture is complete.
 
 ### 6. Report the result

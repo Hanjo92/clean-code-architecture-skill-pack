@@ -26,6 +26,9 @@ Use this checklist before calling the design or implementation complete.
 - Is any migration, backfill, or compatibility risk identified?
 - Is there a clear plan for observability, error reporting, or rollback if the slice fails?
 - Are performance-sensitive paths or external rate limits called out when relevant?
+- Are rollout controls clear, such as feature flags, phased enablement, or compatibility windows?
+- Are support and operational ownership clear for incidents, failed jobs, or partial delivery states?
+- Are audit, traceability, or compliance-visible events identified when the feature changes user-critical behavior?
 
 ## Reporting quality
 
