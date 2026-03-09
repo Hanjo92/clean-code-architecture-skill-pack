@@ -16,6 +16,7 @@ Use `clean-code-architecture-foundation` when you need the shared decision rules
 Read `references/routing-signals.md` when the intent is mixed, ambiguous, or spread across cleanup and new feature work.
 Read `references/routing-examples.md` when the wording is close to real user prompts and you need a fast analogy-based route choice.
 Read `references/routing-evaluation-fixtures.md` when improving or sanity-checking router accuracy against representative prompts.
+Read `references/routing-misclassification-checklist.md` when reviewing borderline cases or tightening router consistency.
 Read `../clean-code-architecture-foundation/references/response-contract.md` when you need the shared output format.
 
 ## Request Fit

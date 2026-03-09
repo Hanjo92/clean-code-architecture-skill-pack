@@ -8,6 +8,7 @@ Use this set to improve router accuracy against representative prompts, especial
 - Identify the strongest signal, not every possible signal.
 - Prefer the route that determines the safest immediate next step.
 - Use `Clarification needed` only when a single short answer would genuinely change the route.
+- Run `routing-misclassification-checklist.md` first when a prompt feels borderline or deceptively mixed.
 
 ## Refactor route fixtures
 
