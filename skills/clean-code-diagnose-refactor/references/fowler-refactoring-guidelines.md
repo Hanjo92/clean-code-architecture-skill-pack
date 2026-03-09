@@ -12,6 +12,7 @@ Use this reference for behavior-preserving refactoring decisions inspired by Mar
 
 - Wear the `refactoring hat` when improving structure while preserving behavior.
 - Wear the `feature hat` when changing behavior for a new requirement.
+- Wear the `bug-fix hat` when correcting behavior that is currently wrong, even if the code is messy.
 - Do not blur the two when reporting results. Say which changes preserve behavior and which intentionally change it.
 
 ## Smells are signals
@@ -25,6 +26,7 @@ Use this reference for behavior-preserving refactoring decisions inspired by Mar
 - Establish a safety net first with tests or an externally visible expectation.
 - Prefer one catalog move at a time over multi-purpose rewrites.
 - Re-run verification after small clusters of related changes.
+- When a bug fix is required, land the smallest correct behavior change before resuming structural cleanup.
 
 If a safety net is missing, fall back to smaller preparatory moves: isolate a seam, add observability, or stop at diagnosis.
 
@@ -57,9 +59,11 @@ Reach for these before inventing new patterns:
 - Use parallel change when callers and implementations need to coexist during migration.
 - Use branch by abstraction for larger migrations when old and new implementations must coexist behind the same boundary.
 - Keep public contracts stable unless the task explicitly includes contract changes.
+- If tests are weak, prefer seam creation, characterization probes, and extraction of side effects before moving domain logic.
 
 ## Stop conditions
 
 - Stop when the next change is speculative rather than task-driven.
 - Stop when the code is easier to change and the current feature can land cleanly.
 - Stop when more abstraction would hide intent instead of clarifying it.
+- Stop when the next structural move would exceed the confidence provided by the available safety net.
