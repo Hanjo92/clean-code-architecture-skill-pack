@@ -24,6 +24,11 @@ Prompt:
 Reason:
 The main job is relocating and clarifying current logic, not designing new features.
 
+Prompt:
+"Review this area now. We may add a feature later, but first tell me why it is brittle."
+Reason:
+The future feature is secondary. The immediate work is diagnosis of current code.
+
 ## Requirements route
 
 Prompt:
@@ -41,6 +46,11 @@ Prompt:
 Reason:
 The dominant risk is building the wrong behavior, not cleaning up legacy code.
 
+Prompt:
+"Build this new workflow cleanly. If the current code smells matter, call them out briefly."
+Reason:
+The immediate job is still new implementation. Smell commentary is secondary.
+
 ## Two-phase route
 
 Prompt:
@@ -57,6 +67,23 @@ Prompt:
 "There is a spec, but adding it on top of the current structure will make things worse."
 Reason:
 Start with a preparatory refactor to open a seam, then implement the feature.
+
+Prompt:
+"Add this capability, but first isolate the legacy rules so we stop stacking changes on the god module."
+Reason:
+The user explicitly couples new behavior with the need for a preparatory seam.
+
+## Clarification needed
+
+Prompt:
+"Make the architecture cleaner."
+Reason:
+The request names a quality goal but does not reveal whether the next action is diagnosis or new implementation.
+
+Prompt:
+"Help me improve this area."
+Reason:
+There is not enough signal to know whether to inspect current code or design a new slice.
 
 ## Usage note
 
