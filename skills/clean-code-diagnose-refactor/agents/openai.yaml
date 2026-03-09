@@ -1,0 +1,10 @@
+interface:
+  display_name: "Clean Refactor"
+  short_description: "Diagnose existing code and refactor it toward clearer, safer boundaries."
+  icon_small: "./assets/icon.png"
+  icon_large: "./assets/logo.png"
+  brand_color: "#B45309"
+  default_prompt: "Use $clean-code-diagnose-refactor to review this existing code, identify the highest-value maintainability problem, and refactor it safely without changing intended behavior."
+
+policy:
+  allow_implicit_invocation: true
