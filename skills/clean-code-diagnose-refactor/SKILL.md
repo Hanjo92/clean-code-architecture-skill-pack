@@ -16,6 +16,7 @@ Use `clean-code-architecture-foundation` when you need shared principles for dec
 Read `references/clean-code-guidelines.md` when you need first-principles guidance on naming, responsibility, side effects, boundaries, and comments.
 Read `references/fowler-refactoring-guidelines.md` when you need Martin Fowler-style guidance on smells, small steps, behavior preservation, preparatory refactoring, and catalog-driven refactor choices.
 Read `references/refactor-anti-patterns.md` when a cleanup plan seems larger than the diagnosed problem.
+Read `references/legacy-refactor-playbook.md` when the code has weak tests, mixed bugfix-plus-refactor pressure, or needs seam-first progress through legacy constraints.
 Read `../clean-code-architecture-foundation/references/response-contract.md` when you need the shared output format.
 
 ## Request Fit
@@ -58,6 +59,7 @@ Switch to `clean-architecture-requirements-build` when:
 - Determine whether the user wants diagnosis only, a targeted refactor, or a broader cleanup.
 - Identify the behavior that must remain stable, the files in scope, and the acceptable amount of churn.
 - If the request is mostly about implementing new behavior from a feature spec, switch to `clean-architecture-requirements-build`.
+- If the task mixes a bug fix with structural cleanup, separate the behavior-changing slice from the behavior-preserving slice before planning edits.
 
 ### 2. Build context before judging structure
 
@@ -83,6 +85,7 @@ Read `references/diagnosis-checklist.md` when you need a systematic review pass.
 - Use `references/clean-code-guidelines.md` to check whether the proposed abstraction actually improves readability and changeability.
 - Use `references/fowler-refactoring-guidelines.md` to decide whether the next move should be a preparatory refactor, a catalog refactoring, or a stop.
 - Use `references/refactor-anti-patterns.md` to reject broad, aesthetic, or speculative cleanup.
+- Use `references/legacy-refactor-playbook.md` when the safest move is seam creation, characterization scaffolding, branch by abstraction, or a diagnosis-only stop.
 
 Read `references/refactoring-patterns.md` when selecting a transformation strategy.
 
@@ -92,6 +95,7 @@ Read `references/refactoring-patterns.md` when selecting a transformation strate
 - Remove duplication only when the shared abstraction has a clear name and stable meaning.
 - Move business rules away from controllers, UI handlers, infrastructure classes, and persistence glue.
 - Do not add patterns ceremonially. Every new layer must reduce coupling or clarify ownership.
+- Keep bug-fix edits and refactoring edits conceptually separate when reporting results, even if they land in one task.
 - Stop if the cleanup is drifting into new feature design, broad renaming without structural gain, or speculative architecture.
 
 ### 6. Verify and report
@@ -107,6 +111,8 @@ If meaningful verification is unavailable or too weak:
 
 - Prefer diagnosis, seam creation, logging, or characterization scaffolding over broad structural movement.
 - Avoid touching public contracts, behavior-heavy conditionals, or cross-module rewrites unless the user explicitly accepts the risk.
+- Treat uncertain legacy behavior as something to observe and pin down, not something to simplify by assumption.
+- If a bug must be fixed, make the smallest behavior change first, then consider a follow-up refactor only if the risk profile improves.
 - Report the work as risk reduction, not full refactoring completion.
 
 ## Output Shape
