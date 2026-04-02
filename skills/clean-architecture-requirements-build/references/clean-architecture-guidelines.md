@@ -33,6 +33,7 @@ Use these guidelines to keep feature design and implementation aligned with clea
 - Implement one business slice end to end before generalizing the platform.
 - Prefer a small working path over a wide scaffold with unclear value.
 - Add layers only when they protect a real boundary or reduce coupling.
+- Keep the current slice in the smallest cohesive set of files and types that still exposes the boundary clearly; do not fan out one simple workflow into many thin abstractions by default.
 - If the current codebase is too tangled for a safe slice, route through a preparatory refactor first instead of forcing clean architecture on top of chaos.
 
 ## Failure handling

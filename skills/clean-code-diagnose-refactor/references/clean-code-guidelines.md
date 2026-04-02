@@ -19,6 +19,7 @@ Use these guidelines when deciding whether a refactor actually improves the code
 - Treat long functions and large classes as a signal to inspect responsibility, not as a formatting issue.
 - Extract logic only when the new unit has a stable name and role.
 - Avoid abstraction that exists only to reduce line count.
+- Do not split cohesive logic into extra files or classes only to make metrics look smaller; separation should follow responsibility, dependency, or change-boundary evidence.
 
 ## Abstraction discipline
 

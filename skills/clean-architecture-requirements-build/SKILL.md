@@ -69,6 +69,7 @@ Read `references/requirements-template.md` when the request is underspecified.
 - Identify entities, value objects, use cases, ports, adapters, and boundary DTOs.
 - Decide what belongs to domain policy versus orchestration versus infrastructure.
 - Keep dependencies pointing inward. Let outer layers implement interfaces required by inner layers.
+- Do not create separate files, classes, ports, or adapters by default when a small slice is still clearer as one cohesive module.
 - Use `references/clean-architecture-guidelines.md` to check whether the slice is truly driven by business rules rather than framework convenience.
 - Use `references/architecture-anti-patterns.md` to reject layers or abstractions that do not protect a real boundary.
 
@@ -88,6 +89,7 @@ Read `references/architecture-mapping.md` when mapping requirements to layers.
 - Use adapters for databases, APIs, queues, files, and UI concerns.
 - Translate between external schemas and internal models at boundaries.
 - Prefer simple composition over inheritance-heavy design.
+- Prefer the smallest cohesive set of files that expresses the current slice clearly, and delay further splitting until independent reasons to change actually appear.
 - If requirements remain ambiguous, encode the decision as an explicit assumption or TODO at the edge, not as fuzzy domain logic.
 - Keep release controls such as feature flags, migration toggles, and compatibility adapters at the edge rather than leaking them into core policy.
 

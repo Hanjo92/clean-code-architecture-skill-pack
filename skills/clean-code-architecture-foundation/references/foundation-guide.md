@@ -9,6 +9,7 @@ Use this guide when a clean-code or clean-architecture task needs shared judgmen
 - Prefer structure that makes the next change safer and easier.
 - Reject abstractions that look architectural but do not reduce coupling or clarify intent.
 - Treat clean code and clean architecture as tools for changeability, not aesthetic goals.
+- Count unnecessary file, class, or layer splits as ceremony when they add navigation cost without protecting a real boundary.
 
 ### Explicit intent
 
@@ -33,6 +34,7 @@ Use this guide when a clean-code or clean-architecture task needs shared judgmen
 - Do not refactor because a rule exists; refactor because the code is hard to change or understand.
 - Do not add layers because clean architecture says so; add them when they protect a real boundary.
 - Stop when the next abstraction is speculative instead of task-driven.
+- Do not split cohesive code into extra files or classes just to make units look smaller; split only when responsibility, dependency direction, or change cadence truly differs.
 
 ## Decision priority
 

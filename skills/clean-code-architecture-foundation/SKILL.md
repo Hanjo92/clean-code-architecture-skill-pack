@@ -28,6 +28,7 @@ Use this skill when you need to:
 - Prefer decisions that make future change safer, cheaper, and easier to reason about.
 - Value readability, boundary clarity, and testability because they reduce change cost.
 - Reject cleanup or architecture work that does not improve changeability or correctness.
+- Treat unnecessary file, class, or layer splitting as structural cost, not as automatic cleanliness.
 
 Read `references/foundation-guide.md` for the common philosophy.
 
@@ -44,6 +45,7 @@ Read `references/foundation-guide.md` when priorities compete.
 - Judge the result by the smallest useful slice that is easier to understand and safer to change.
 - Prefer explicit assumptions, narrow abstractions, and verifiable progress.
 - Distinguish necessary architecture from architecture theater.
+- Prefer cohesive modules over mechanically splitting files or classes when the project size and change pressure do not justify more structure.
 
 Read `references/foundation-guide.md` before finalizing a result.
 Read `references/response-contract.md` when you need the shared output format and response discipline across related skills.

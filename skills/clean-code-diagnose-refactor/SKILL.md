@@ -66,6 +66,7 @@ Switch to `clean-architecture-requirements-build` when:
 - Read the smallest set of files that reveals entry points, data flow, dependencies, and tests.
 - Separate domain logic, orchestration logic, I/O, and framework code before proposing changes.
 - Look for existing conventions and preserve them unless they are the source of the problem.
+- Treat unnecessary file or class splitting as a candidate problem too when it makes one change bounce across thin wrappers with no clear ownership gain.
 
 ### 3. Diagnose concretely
 
@@ -95,6 +96,7 @@ Read `references/refactoring-patterns.md` when selecting a transformation strate
 - Remove duplication only when the shared abstraction has a clear name and stable meaning.
 - Move business rules away from controllers, UI handlers, infrastructure classes, and persistence glue.
 - Do not add patterns ceremonially. Every new layer must reduce coupling or clarify ownership.
+- Prefer merging or inlining thin indirection when extra files, classes, or helper layers only reduce local line count instead of improving changeability.
 - Keep bug-fix edits and refactoring edits conceptually separate when reporting results, even if they land in one task.
 - Stop if the cleanup is drifting into new feature design, broad renaming without structural gain, or speculative architecture.
 
