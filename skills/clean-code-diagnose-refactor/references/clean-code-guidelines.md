@@ -20,6 +20,7 @@ Use these guidelines when deciding whether a refactor actually improves the code
 - Extract logic only when the new unit has a stable name and role.
 - Avoid abstraction that exists only to reduce line count.
 - Do not split cohesive logic into extra files or classes only to make metrics look smaller; separation should follow responsibility, dependency, or change-boundary evidence.
+- Keep tiny interfaces, wrappers, or helper scripts in the same file when they only make sense together and have no real independent lifecycle.
 
 ## Abstraction discipline
 

@@ -8,6 +8,7 @@ Use this reference to reject cleanup work that looks sophisticated but does not 
 - Large renaming passes with little structural benefit
 - New layers added only for aesthetics
 - Mechanical file or class splitting that turns one local edit into multi-file navigation without clarifying ownership
+- One-method interfaces or trivial scripts split into their own files even though they only exist to serve one local flow
 - Generic utility extraction that weakens domain language
 - Mixing feature changes into a behavior-preserving refactor without clear separation
 - Replacing concrete duplication with an abstraction that has no stable name

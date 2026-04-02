@@ -10,6 +10,7 @@ Use this guide when a clean-code or clean-architecture task needs shared judgmen
 - Reject abstractions that look architectural but do not reduce coupling or clarify intent.
 - Treat clean code and clean architecture as tools for changeability, not aesthetic goals.
 - Count unnecessary file, class, or layer splits as ceremony when they add navigation cost without protecting a real boundary.
+- Count tiny standalone interfaces or scripts as ceremony too when keeping them with the owning code would be clearer.
 
 ### Explicit intent
 
@@ -35,6 +36,7 @@ Use this guide when a clean-code or clean-architecture task needs shared judgmen
 - Do not add layers because clean architecture says so; add them when they protect a real boundary.
 - Stop when the next abstraction is speculative instead of task-driven.
 - Do not split cohesive code into extra files or classes just to make units look smaller; split only when responsibility, dependency direction, or change cadence truly differs.
+- Keep very small interfaces, helper scripts, and thin adapter glue in the same file when they still change together and are easiest to understand locally.
 
 ## Decision priority
 

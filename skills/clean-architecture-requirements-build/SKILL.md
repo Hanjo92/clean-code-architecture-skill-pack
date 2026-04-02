@@ -70,6 +70,7 @@ Read `references/requirements-template.md` when the request is underspecified.
 - Decide what belongs to domain policy versus orchestration versus infrastructure.
 - Keep dependencies pointing inward. Let outer layers implement interfaces required by inner layers.
 - Do not create separate files, classes, ports, or adapters by default when a small slice is still clearer as one cohesive module.
+- Keep tiny interfaces, thin adapter scripts, and one-off boundary glue in the same file as the owning slice until separate evolution is actually needed.
 - Use `references/clean-architecture-guidelines.md` to check whether the slice is truly driven by business rules rather than framework convenience.
 - Use `references/architecture-anti-patterns.md` to reject layers or abstractions that do not protect a real boundary.
 
@@ -90,6 +91,7 @@ Read `references/architecture-mapping.md` when mapping requirements to layers.
 - Translate between external schemas and internal models at boundaries.
 - Prefer simple composition over inheritance-heavy design.
 - Prefer the smallest cohesive set of files that expresses the current slice clearly, and delay further splitting until independent reasons to change actually appear.
+- Prefer one cohesive file for tiny ports, boundary types, or scripts when splitting them would only add file hops without making the design safer.
 - If requirements remain ambiguous, encode the decision as an explicit assumption or TODO at the edge, not as fuzzy domain logic.
 - Keep release controls such as feature flags, migration toggles, and compatibility adapters at the edge rather than leaking them into core policy.
 

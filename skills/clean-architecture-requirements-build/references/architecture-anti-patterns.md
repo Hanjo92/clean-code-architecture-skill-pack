@@ -7,6 +7,7 @@ Use this reference to reject designs that imitate clean architecture terminology
 - Layers that mirror framework folders rather than business boundaries
 - Repositories, services, and DTOs created for every entity by default
 - Small workflows exploded into many thin files, classes, or interfaces before any real boundary pressure exists
+- Tiny ports, interface definitions, or scripts split into separate files even though they only serve one local slice
 - Use cases that are so generic they hide actual business intent
 - Domain models contaminated with transport, ORM, or framework annotations
 - Adapters that contain business policy because the port was defined too loosely
