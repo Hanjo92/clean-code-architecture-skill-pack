@@ -13,10 +13,8 @@ Do not solve the whole problem before routing. First decide whether the primary 
 
 Use `clean-code-architecture-foundation` when you need the shared decision rules behind the route choice.
 
-Read `references/routing-signals.md` when the intent is mixed, ambiguous, or spread across cleanup and new feature work.
-Read `references/routing-examples.md` when the wording is close to real user prompts and you need a fast analogy-based route choice.
+Read `references/routing-guide.md` when the intent is mixed, ambiguous, or borderline and you need the combined routing signals, traps, and examples.
 Read `references/routing-evaluation-fixtures.md` when improving or sanity-checking router accuracy against representative prompts.
-Read `references/routing-misclassification-checklist.md` when reviewing borderline cases or tightening router consistency.
 Read `../clean-code-architecture-foundation/references/response-contract.md` when you need the shared output format.
 
 ## Request Fit
@@ -68,7 +66,7 @@ Do not use this skill as the primary skill for requests like:
 - Name the strongest one or two signals that drove the choice.
 - Mention what work is intentionally deferred to the second phase or another skill.
 - Keep the routing explanation short and operational.
-- If the wording is close to a known example in `references/routing-examples.md`, reuse that route unless stronger contrary evidence appears in the request.
+- If the wording is close to a known example in `references/routing-guide.md`, reuse that route unless stronger contrary evidence appears in the request.
 - If the request matches a known edge case in `references/routing-evaluation-fixtures.md`, prefer the expected route from that fixture unless the user provides stronger contradictory evidence.
 
 ### 6. Use decisive language

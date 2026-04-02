@@ -167,6 +167,18 @@ For mixed requests:
 2. 그 위에 신규 behavior 구현  
    implement the new behavior on top of that clearer boundary
 
+## Structure Policy
+
+이 레포는 파일 수를 줄이는 것 자체를 목표로 하지도, 라인 수만 보고 기계적으로 쪼개는 것도 목표로 하지 않습니다.
+This repository does not optimize for low file count, and it does not split documents mechanically by line count.
+
+- 스킬 폴더 단위 분리는 역할 경계가 명확할 때만 유지합니다.
+  Keep skill-level folder separation only when the responsibility boundary is clear.
+- `references/`는 “한 번에 같이 읽는 판단 흐름”을 기준으로 묶고, 작은 문서를 과도하게 늘리지 않습니다.
+  Group `references/` by the decision flow that is usually read together, and avoid multiplying tiny documents.
+- 새 파일, 타입, 레이어는 외형보다 실제 변경 비용을 낮출 때만 추가합니다.
+  Add a new file, type, or layer only when it lowers real change cost rather than improving appearances alone.
+
 ## Repository Structure
 
 ```text

@@ -29,7 +29,7 @@ Use this skill when you need to:
 - Value readability, boundary clarity, and testability because they reduce change cost.
 - Reject cleanup or architecture work that does not improve changeability or correctness.
 
-Read `references/shared-principles.md` for the common philosophy.
+Read `references/foundation-guide.md` for the common philosophy.
 
 ### 2. Resolve competing priorities
 
@@ -37,7 +37,7 @@ Read `references/shared-principles.md` for the common philosophy.
 - When requirement ambiguity conflicts with structural cleanup, clarify the requirement first unless the current structure blocks safe delivery.
 - When both new behavior and structural cleanup matter, sequence them rather than blending them invisibly.
 
-Read `references/decision-priority.md` when priorities compete.
+Read `references/foundation-guide.md` when priorities compete.
 
 ### 3. Apply the quality bar
 
@@ -45,7 +45,7 @@ Read `references/decision-priority.md` when priorities compete.
 - Prefer explicit assumptions, narrow abstractions, and verifiable progress.
 - Distinguish necessary architecture from architecture theater.
 
-Read `references/quality-bar.md` before finalizing a result.
+Read `references/foundation-guide.md` before finalizing a result.
 Read `references/response-contract.md` when you need the shared output format and response discipline across related skills.
 
 ## Relationship To Other Skills
